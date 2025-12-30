@@ -1,9 +1,10 @@
 import { Quicksand } from "next/font/google";
 import "./globals.css";
 import Globalaudio from "./Globalaudio";
+import Script from "next/script";
 const quicksand = Quicksand({
   subsets: ["latin"],
-  weight:["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata = {
@@ -19,6 +20,8 @@ export default function RootLayout({ children }) {
       >
         <Globalaudio />
         {children}
+        <Script src="https://cdn.jsdelivr.net/npm/canvas-confetti/dist/confetti.browser.min.js" />
+
       </body>
     </html>
   );

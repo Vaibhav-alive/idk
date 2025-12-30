@@ -35,7 +35,7 @@ export default function ComplimentsScreen({ onNext }) {
 
   return (
     <motion.div
-      className="flex flex-col items-center justify-center h-full w-full text-center"
+      className="flex flex-col items-center justify-center h-full w-full text-center bg-primary"
     >
       <div className="w-full max-w-xl mx-auto flex flex-col items-center gap-8">
         {/* Center heart */}
@@ -48,7 +48,6 @@ export default function ComplimentsScreen({ onNext }) {
           <Heart className="w-14 h-14 text-pink-400 fill-pink-400" />
         </motion.div>
 
-        {/* Heading & Subtext */}
         <div>
           <motion.h2
             className="text-4xl md:text-5xl font-dancing-script text-zinc-50 font-semibold leading-tight"

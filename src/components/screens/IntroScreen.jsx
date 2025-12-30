@@ -1,9 +1,42 @@
+"use client";
 import { motion } from "framer-motion";
 import { Heart } from "lucide-react";
 import { useRef } from "react";
 
 export default function IntroScreen({ onNext }) {
-    
+    const conf = useRef(false)
+    const intervalRef = useRef(null);
+
+    const handleclick = () => {
+        if (window.confetti) {
+            window.confetti({
+                particleCount: 200,
+                spread: 90,
+                startVelocity: 35,
+                origin: { y: 0.7 }
+            });
+        }
+        if (!conf.current) {
+            conf.current = true
+            const corners = [
+                { x: 0, y: 0.9 },
+                { x: 1, y: 0.9 },
+            ];
+
+
+            intervalRef.current = setInterval(() => {
+                corners.forEach((origin) =>
+                    window.confetti({
+                        particleCount: 30,
+                        spread: 80,
+                        startVelocity: 25,
+                        origin,
+                    })
+                )
+            }, 1200)
+        }
+        onNext()
+    }
     return (
         <div>
             {/* <audio src="/music.mp3"  ref={audio}/> */}
@@ -46,9 +79,10 @@ export default function IntroScreen({ onNext }) {
                 >
                     <motion.button
                         className="bg-linear-to-r from-pink-500 via-rose-500 to-pink-500 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-2xl hover:shadow-pink-500/25 transition-all relative overflow-hidden flex items-center gap-2 will-change-transform"
-                        onClick={onNext}
+                        onClick={handleclick}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
+                        
                     >
                         <span className="relative z-10">Open My Heart </span> <Heart size={20} className="fill-current" />
                     </motion.button>
