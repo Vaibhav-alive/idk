@@ -10,31 +10,42 @@ export default function IntroScreen({ onNext }) {
     const handleclick = () => {
         if (window.confetti) {
             window.confetti({
-                particleCount: 200,
-                spread: 90,
-                startVelocity: 35,
-                origin: { y: 0.7 }
+                particleCount: 100,
+                spread: 100,
+                startVelocity: 40,
+                origin: { y: 0.7 },
+
             });
         }
-        if (!conf.current) {
-            conf.current = true
-            const corners = [
-                { x: 0, y: 0.9 },
-                { x: 1, y: 0.9 },
-            ];
+        const duration = 5000; // 5 seconds – change if you want longer
+        const end = Date.now() + duration;
 
+        function frame() {
+            // Corners blast
+            window.confetti({
+                particleCount: 2,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0, y: 0.9 },
+                colors : ['#bb0000']
+            });
 
-            intervalRef.current = setInterval(() => {
-                corners.forEach((origin) =>
-                    window.confetti({
-                        particleCount: 30,
-                        spread: 80,
-                        startVelocity: 25,
-                        origin,
-                    })
-                )
-            }, 1200)
+            window.confetti({
+                particleCount: 2,
+                angle: 110,
+                spread: 50,
+                origin: { x: 1, y: 0.9 },
+                colors : ['#ffff']
+
+            });
+
+            // ⬇️ THIS LINE decides if loop continues
+            if (Date.now() < end) {
+                requestAnimationFrame(frame);
+            }
         }
+
+            requestAnimationFrame(frame);
         onNext()
     }
     return (
@@ -82,7 +93,7 @@ export default function IntroScreen({ onNext }) {
                         onClick={handleclick}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        
+
                     >
                         <span className="relative z-10">Open My Heart </span> <Heart size={20} className="fill-current" />
                     </motion.button>
