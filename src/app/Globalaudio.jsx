@@ -16,7 +16,7 @@ export default function Globalaudio(){
     return () => window.removeEventListener("click", handler);
 }, [])
     return(
-        <audio src="/music.mp3" ref={audio} loop/>
+        <audio src="/music2.mp3" ref={audio} loop/>
     )
 }
 
