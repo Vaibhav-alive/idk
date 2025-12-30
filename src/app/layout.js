@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${quicksand.className} bg-black antialiased select-none`}
+        className={`${quicksand.className}  antialiased select-none`}
       >
         <Globalaudio />
         {children}

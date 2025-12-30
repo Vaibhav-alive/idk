@@ -1,52 +1,71 @@
-"use client"
+"use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import IntroScreen from "@/components/screens/IntroScreen";
-import ComplimentsScreen from "@/components/screens/ComplimentsScreen";
-import MessageScreen from "@/components/screens/MessageScreen";
-import FinalScreen from "@/components/screens/FinalScreen";
+import { AnimatePresence, motion } from "framer-motion";
+import Welcome from "@/components/screens/IntroScreen";
+import Compliment from "@/components/screens/ComplimentsScreen";
+import Message from "@/components/screens/MessageScreen";
+import Final from "@/components/screens/FinalScreen";
 
 export default function Home() {
-  const [currentScreen, setCurrentScreen] = useState(0)
+  const [currentScreen, setCurrentScreen] = useState("welcome");
 
-  const screens = [
-    <IntroScreen key="intro" onNext={() => setCurrentScreen(1)} />,
-    <ComplimentsScreen key="compliments" onNext={() => setCurrentScreen(2)} />,
-    <MessageScreen key="message" onNext={() => setCurrentScreen(3)} />,
-    <FinalScreen key="final" />,
-  ]
+  const handleNext = () => {
+    if (currentScreen === "welcome") setCurrentScreen("compliment");
+    else if (currentScreen === "compliment") setCurrentScreen("message");
+    else if (currentScreen === "message") setCurrentScreen("final");
+  };
+
+  const bgMap = {
+    welcome: "radial-gradient(125% 125% at 50% 10%, #1a0a0f 40%, #5c0018 100%)",
+    compliment: "radial-gradient(125% 125% at 50% 10%, #0d0012 40%, #3e007a 100%)",
+    message: "radial-gradient(125% 125% at 50% 10%, #050505 40%, #3f031cbb 100%)",
+    final: "radial-gradient(125% 125% at 50% 10%, #0a0a2a 40%, #3b0a6bbb 100%)",
+  };
+
+  const screens = {
+    welcome: <Welcome onNext={handleNext} />,
+    compliment: <Compliment onNext={handleNext} />,
+    message: <Message onNext={handleNext} />,
+    final: <Final />,
+  };
+
+  const ScreenWrapper = ({ children, keyName }) => (
+    <motion.div
+      key={keyName}
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 1.05 }}
+      transition={{ duration: 1 }}
+      className="relative z-10 flex items-center justify-center min-h-screen w-full"
+    >
+      {children}
+    </motion.div>
+  );
 
   return (
-    <div className="min-h-screen overflow-hidden"
-      style={{
-        background: "radial-gradient(125% 125% at 50% 10%, #050505 40%, #3f031cbb 100%)",
-      }}>
+    <div className="relative min-h-screen w-full overflow-hidden">
+      {/* Background Layer */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentScreen + "-bg"}
+          className="absolute inset-0"
+          style={{ background: bgMap[currentScreen] }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.9, ease: "easeInOut" }}
+        />
+      </AnimatePresence>
 
-      <div className="relative z-10 flex min-h-screen items-center justify-center px-4 py-6 md:p-6">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentScreen}
-            initial={{ opacity: 0, }}
-            animate={{ opacity: 1, }}
-            exit={{ opacity: 0, }}
-            transition={{ duration: 0.5 }}
-          >
-            {screens[currentScreen]}
-          </motion.div>
-        </AnimatePresence>
-      </div>
-
-      {/* Watermark */}
-      <motion.div
-        initial={{ x: 100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{
-          duration: 1,
-        }}
-        className="fixed bottom-4 right-4 text-sm text-white/40 pointer-events-none z-50 font-light">
-        @Bareminimumbyshayaan
-      </motion.div>
+      {/* Screens */}
+      <AnimatePresence mode="wait">
+        {Object.entries(screens).map(([key, Component]) =>
+          currentScreen === key ? (
+            <ScreenWrapper keyName={key}>{Component}</ScreenWrapper>
+          ) : null
+        )}
+      </AnimatePresence>
     </div>
   );
 }
