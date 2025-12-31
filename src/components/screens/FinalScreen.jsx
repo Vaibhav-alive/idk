@@ -52,7 +52,7 @@ export default function FinalScreen({ onNext }) {
         whileTap={{ scale: 0.95 }}
         whileHover={{ scale: 1.05 }}
       >
-        🎇 New Year Surprise
+        One More Thing!!!
       </motion.button>
     </motion.div>
   )

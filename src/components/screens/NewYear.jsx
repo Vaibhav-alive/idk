@@ -78,7 +78,7 @@ export function NewYearWish() {
   const [hearts, setHearts] = useState([]);
 
   useEffect(() => {
-    const particles = Array.from({ length: 8 }, (_, i) => ({
+    const particles = Array.from({ length: 15 }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
       delay: Math.random() * 2,
@@ -137,7 +137,7 @@ export function NewYearWish() {
           transition={{
             duration: 3,
             delay: heart.delay,
-            repeat: 2,
+            repeat: 1,
             ease: "linear",
           }}
         >
@@ -156,7 +156,7 @@ export function NewYearWish() {
             style={{ left: `${particle.x}%`, top: "-5%" }}
             animate={{
               y: ["0vh", "110vh"],
-              rotate: [0, 360, 720],
+              rotate: [0, 360],
               opacity: [1, 0.8, 0],
             }}
             transition={{
@@ -207,7 +207,7 @@ export function NewYearWish() {
                   animate={{ 
                     scale: [1, 1.15, 1],
                   }}
-                  transition={{ duration: 2, repeat: Infinity }}
+                  transition={{ duration: 2, repeat: 1 }}
                   className="mb-6 flex justify-center"
                 >
                   <div className="relative">
@@ -248,7 +248,7 @@ export function NewYearWish() {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 4 }}
+            transition={{ duration: 2 }}
             className="text-center"
           >
             <Card className="bg-white/10 backdrop-blur-lg border-purple-400/30 shadow-2xl" style={{
@@ -266,8 +266,8 @@ export function NewYearWish() {
                     {/* Massive glowing background effect */}
                     <motion.div
                       animate={{ 
-                        rotate: [0, 360],
-                        scale: [1, 1.1, 1]
+                        rotate: [0, 160],
+                        scale: [1, 1.1]
                       }}
                       transition={{ 
                         duration: 2, 
@@ -283,11 +283,11 @@ export function NewYearWish() {
                     {/* Giant pulsing glow */}
                     <motion.div
                       animate={{ 
-                        scale: [1, 1.3, 1],
-                        opacity: [0.4, 0.8, 0.4]
+                        scale: [1, 1.3],
+                        opacity: [0.8, 0.4]
                       }}
                       transition={{ 
-                        duration: 1, 
+                        duration: 2, 
                         repeat: 1,
                       }}
                       className="absolute -inset-20 bg-gradient-to-r from-yellow-300 via-purple-400 to-pink-400 rounded-full blur-3xl"
@@ -309,7 +309,7 @@ export function NewYearWish() {
                           // }}
                           transition={{ 
                             duration: 2, 
-                            repeat: 2,
+                            repeat: 1,
                             ease: 'linear'
                           }}
                           className="absolute -inset-4 rounded-2xl opacity-70"
@@ -342,7 +342,7 @@ export function NewYearWish() {
                         </motion.div>
                         <motion.div
                           animate={{ scale: [1, 1.3, 1], rotate: [0, 10, -10, 0] }}
-                          transition={{ duration: 2, repeat: Infinity }}
+                          transition={{ duration: 2, repeat: 1 }}
                           className="absolute -top-3 -right-3"
                         >
                           <Heart className="w-10 h-10 text-red-500 fill-red-500 drop-shadow-2xl" />
@@ -362,7 +362,7 @@ export function NewYearWish() {
                           //   scale: [1, 1.05, 1]
                           // }}
                           transition={{ 
-                            duration: 4, 
+                            duration: 3, 
                             repeat: 1,
                             ease: 'linear'
                           }}
@@ -383,8 +383,8 @@ export function NewYearWish() {
                           }}
                           transition={{
                             duration: 2,
-                            repeat: 2,
-                            delay: 1,
+                            repeat: 1,
+                            delay: 3,
                           }}
                           className="relative overflow-hidden rounded-2xl"
                         >
@@ -397,7 +397,7 @@ export function NewYearWish() {
                         </motion.div>
                         <motion.div
                           animate={{ scale: [1, 1.3, 1], rotate: [0, -10, 10, 0] }}
-                          transition={{ duration: 6, repeat: Infinity, delay: 0.3 }}
+                          transition={{ duration: 3, repeat: 1, delay: 0.3 }}
                           className="absolute -top-3 -left-3"
                         >
                           <Sparkles className="w-10 h-10 text-yellow-300 drop-shadow-2xl" />
@@ -440,7 +440,7 @@ export function NewYearWish() {
                             
                             duration: 2,
                             repeat: 1,
-                            delay: 2,
+                            delay: 3,
                           }}
                           className="relative overflow-hidden rounded-2xl"
                         >
@@ -452,7 +452,7 @@ export function NewYearWish() {
                         </motion.div>
                         <motion.div
                           animate={{ scale: [1, 1.3, 1], rotate: [0, 15, -15, 0] }}
-                          transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }}
+                          transition={{ duration: 2.5, repeat: 1, delay: 0.5 }}
                           className="absolute -bottom-3 -right-3"
                         >
                           <Heart className="w-10 h-10 text-pink-400 fill-pink-400 drop-shadow-2xl" />
@@ -492,8 +492,8 @@ export function NewYearWish() {
 
                           }}
                           transition={{
-                            duration: 3,
-                            repeat: 2,
+                            duration: 2,
+                            repeat: 1,
                             delay: 1,
                           }}
                           className="relative overflow-hidden rounded-2xl"
@@ -506,7 +506,7 @@ export function NewYearWish() {
                         </motion.div>
                         <motion.div
                           animate={{ scale: [1, 1.3, 1], rotate: [0, -15, 15, 0] }}
-                          transition={{ duration: 2.8, repeat: Infinity, delay: 0.7 }}
+                          transition={{ duration: 2, repeat: 1, delay: 0.7 }}
                           className="absolute -bottom-3 -left-3"
                         >
                           <Sparkles className="w-10 h-10 text-purple-300 drop-shadow-2xl" />
@@ -522,8 +522,8 @@ export function NewYearWish() {
                         y: [-10, 10, -10]
                       }}
                       transition={{ 
-                        duration: 9, 
-                        repeat: 2,
+                        duration: 2, 
+                        repeat: 1,
                       }}
                       className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
                     >

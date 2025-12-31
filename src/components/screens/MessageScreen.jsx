@@ -3,9 +3,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Heart, MoveRight } from "lucide-react"
 
 const message = `
-I just wanted to tell you something... you really are special in a way that’s hard to explain.  
-There’s a softness in the way you talk, a sweetness in the way you smile, and something genuine about you that just feels good to be around.  
-You don’t try to be anything extra, you’re just you, and that’s what makes you so lovely.
+I just wanted to inform you that I love you for the person who you are. For me, you are the best support I could ever ask for. You mean the world to me, every moment spent with you, feels like heaven. I'm really very fortunate to have you, and, want you to stay with me till the doom's day. I love you, Titiksha.
 `
 
 export default function MessageScreen({ onNext }) {

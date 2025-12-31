@@ -20,9 +20,9 @@ export default function Home() {
 
   const bgMap = {
     welcome: "radial-gradient(125% 125% at 50% 10%, #1a0a0f 40%, #5c0018 100%)",
-    compliment: "radial-gradient(125% 125% at 50% 10%, #0d0012 40%, #3e007a 100%)",
+    compliment: "radial-gradient(125% 125% at 50% 10%, #3e007a 40%, #0d0012 100%)",
     message: "radial-gradient(125% 125% at 50% 10%, #050505 40%, #3f031cbb 100%)",
-    final: "radial-gradient(125% 125% at 50% 10%, #0a0a2a 40%, #3b0a6bbb 100%)",
+    final: "radial-gradient(125% 125% at 50% 10%, #3b0a6bbb 40%, #0a0a2a 100%)", 
   };
 
   const screens = {

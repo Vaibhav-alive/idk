@@ -2,11 +2,11 @@ import { motion } from "framer-motion"
 import { Heart, MoveRight } from "lucide-react"
 
 const compliments = [
-  "You look adorable",
-  "You have the sweetest vibe",
-  "You make things feel lighter",
-  "You are naturally charming",
-  "You make everything feel more special",
+  "You are imperfectly perfect",
+  "Your clinginess is addictive",
+  "You are my sweetest dream",
+  "With you, I fell loved",
+  "Titiksha, you inspire me",
 ]
 
 function Card({ text }) {
