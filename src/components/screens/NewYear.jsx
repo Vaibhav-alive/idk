@@ -328,8 +328,8 @@ export function NewYearWish() {
 
                           }}
                           transition={{
-                            duration: 3,
-                            repeat: 2,
+                            duration: 1,
+                            repeat: 1,
                           }}
                           className="relative overflow-hidden rounded-2xl"
                         >
