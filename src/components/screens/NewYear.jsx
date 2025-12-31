@@ -78,14 +78,14 @@ export function NewYearWish() {
   const [hearts, setHearts] = useState([]);
 
   useEffect(() => {
-    const particles = Array.from({ length: 50 }, (_, i) => ({
+    const particles = Array.from({ length: 8 }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
       delay: Math.random() * 2,
     }));
     setConfetti(particles);
 
-    const heartParticles = Array.from({ length: 30 }, (_, i) => ({
+    const heartParticles = Array.from({ length: 10 }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
       delay: Math.random() * 3,
@@ -105,7 +105,7 @@ export function NewYearWish() {
       }}
     >
       <div className="absolute inset-0">
-        {Array.from({ length: 30 }).map((_, i) => (
+        {Array.from({ length: 4 }).map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-2 h-2 bg-yellow-200 rounded-full opacity-60"
@@ -115,8 +115,8 @@ export function NewYearWish() {
             }}
             animate={{ scale: [1, 1.8, 1], opacity: [0.2, 0.8, 0.2] }}
             transition={{
-              duration: 2 + Math.random() * 2,
-              repeat: Infinity,
+              duration: 2,
+              repeat: 1,
               delay: Math.random() * 2,
             }}
           />
@@ -135,9 +135,9 @@ export function NewYearWish() {
             rotate: [0, 360],
           }}
           transition={{
-            duration: 8 + Math.random() * 4,
+            duration: 3,
             delay: heart.delay,
-            repeat: Infinity,
+            repeat: 2,
             ease: "linear",
           }}
         >
@@ -248,7 +248,7 @@ export function NewYearWish() {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 4 }}
             className="text-center"
           >
             <Card className="bg-white/10 backdrop-blur-lg border-purple-400/30 shadow-2xl" style={{
@@ -270,8 +270,8 @@ export function NewYearWish() {
                         scale: [1, 1.1, 1]
                       }}
                       transition={{ 
-                        duration: 10, 
-                        repeat: Infinity,
+                        duration: 2, 
+                        repeat: 1,
                         ease: 'linear'
                       }}
                       className="absolute inset-0 opacity-60 blur-3xl"
@@ -287,8 +287,8 @@ export function NewYearWish() {
                         opacity: [0.4, 0.8, 0.4]
                       }}
                       transition={{ 
-                        duration: 4, 
-                        repeat: Infinity,
+                        duration: 1, 
+                        repeat: 1,
                       }}
                       className="absolute -inset-20 bg-gradient-to-r from-yellow-300 via-purple-400 to-pink-400 rounded-full blur-3xl"
                     />
@@ -303,13 +303,13 @@ export function NewYearWish() {
                         className="relative group"
                       >
                         <motion.div
-                          animate={{ 
-                            rotate: [0, 360],
-                            scale: [1, 1.05, 1]
-                          }}
+                          // animate={{ 
+                          //   rotate: [0, 360],
+                          //   scale: [1, 1.05, 1]
+                          // }}
                           transition={{ 
-                            duration: 8, 
-                            repeat: Infinity,
+                            duration: 2, 
+                            repeat: 2,
                             ease: 'linear'
                           }}
                           className="absolute -inset-4 rounded-2xl opacity-70"
@@ -322,20 +322,20 @@ export function NewYearWish() {
                           animate={{
                             boxShadow: [
                               '0 0 40px rgba(255, 204, 51, 0.6)',
-                              '0 0 60px rgba(255, 51, 153, 0.8)',
-                              '0 0 40px rgba(255, 204, 51, 0.6)',
+                              '0 0 60px rgba(255, 51, 153, 0.8)'
                             ]
                           }}
                           transition={{
                             duration: 3,
-                            repeat: Infinity,
+                            repeat: 2,
                           }}
                           className="relative overflow-hidden rounded-2xl"
                         >
                           <img
-                            src="https://images.unsplash.com/photo-1720712013231-a1f33b90f9f6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGNvdXBsZSUyMGNlbGVicmF0aW9ufGVufDF8fHx8MTc2NzE1MjMyMnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                            src="/img1.jpg"
                             alt="Happy moment 1"
                             className="w-full h-64 object-cover border-4 border-yellow-200/50 rounded-2xl"
+                            loading="lazy"
                           />
                         </motion.div>
                         <motion.div
@@ -355,13 +355,13 @@ export function NewYearWish() {
                         className="relative group"
                       >
                         <motion.div
-                          animate={{ 
-                            rotate: [360, 0],
-                            scale: [1, 1.05, 1]
-                          }}
+                          // animate={{ 
+                          //   rotate: [360, 0],
+                          //   scale: [1, 1.05, 1]
+                          // }}
                           transition={{ 
-                            duration: 9, 
-                            repeat: Infinity,
+                            duration: 4, 
+                            repeat: 1,
                             ease: 'linear'
                           }}
                           className="absolute -inset-4 rounded-2xl opacity-70"
@@ -374,26 +374,26 @@ export function NewYearWish() {
                           animate={{
                             boxShadow: [
                               '0 0 40px rgba(255, 51, 153, 0.6)',
-                              '0 0 60px rgba(138, 43, 226, 0.8)',
-                              '0 0 40px rgba(255, 51, 153, 0.6)',
+                              '0 0 60px rgba(138, 43, 226, 0.8)'
                             ]
                           }}
                           transition={{
-                            duration: 3,
-                            repeat: Infinity,
+                            duration: 2,
+                            repeat: 2,
                             delay: 1,
                           }}
                           className="relative overflow-hidden rounded-2xl"
                         >
                           <img
-                            src="https://images.unsplash.com/photo-1765247840039-7f6b006b4abd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyb21hbnRpYyUyMGNvdXBsZSUyMHNtaWxpbmd8ZW58MXx8fHwxNzY3MTUyMzIzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                            src="/img2.jpg"
                             alt="Happy moment 2"
                             className="w-full h-64 object-cover border-4 border-pink-200/50 rounded-2xl"
+                            loading="lazy"
                           />
                         </motion.div>
                         <motion.div
                           animate={{ scale: [1, 1.3, 1], rotate: [0, -10, 10, 0] }}
-                          transition={{ duration: 2.2, repeat: Infinity, delay: 0.3 }}
+                          transition={{ duration: 6, repeat: Infinity, delay: 0.3 }}
                           className="absolute -top-3 -left-3"
                         >
                           <Sparkles className="w-10 h-10 text-yellow-300 drop-shadow-2xl" />
@@ -408,13 +408,13 @@ export function NewYearWish() {
                         className="relative group"
                       >
                         <motion.div
-                          animate={{ 
-                            rotate: [0, 360],
-                            scale: [1, 1.05, 1]
-                          }}
+                          // animate={{ 
+                          //   rotate: [0, 360],
+                          //   scale: [1, 1.05, 1]
+                          // }}
                           transition={{ 
-                            duration: 10, 
-                            repeat: Infinity,
+                            duration: 2, 
+                            repeat: 1,
                             ease: 'linear'
                           }}
                           className="absolute -inset-4 rounded-2xl opacity-70"
@@ -427,19 +427,18 @@ export function NewYearWish() {
                           animate={{
                             boxShadow: [
                               '0 0 40px rgba(138, 43, 226, 0.6)',
-                              '0 0 60px rgba(255, 204, 51, 0.8)',
-                              '0 0 40px rgba(138, 43, 226, 0.6)',
+                              '0 0 60px rgba(255, 204, 51, 0.8)'
                             ]
                           }}
                           transition={{
                             duration: 3,
-                            repeat: Infinity,
+                            repeat: 1,
                             delay: 2,
                           }}
                           className="relative overflow-hidden rounded-2xl"
                         >
                           <img
-                            src="https://images.unsplash.com/photo-1559769697-23e044c5e0e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBsb3ZlJTIwdG9nZXRoZXJ8ZW58MXx8fHwxNzY3MTUyMzIzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                            src="/img3.jpg"
                             alt="Happy moment 3"
                             className="w-full h-64 object-cover border-4 border-purple-200/50 rounded-2xl"
                           />
@@ -461,13 +460,13 @@ export function NewYearWish() {
                         className="relative group"
                       >
                         <motion.div
-                          animate={{ 
-                            rotate: [360, 0],
-                            scale: [1, 1.05, 1]
-                          }}
+                          // animate={{ 
+                          //   rotate: [360, 0],
+                          //   scale: [1, 1.05, 1]
+                          // }}
                           transition={{ 
-                            duration: 11, 
-                            repeat: Infinity,
+                            duration: 3, 
+                            repeat: 1,
                             ease: 'linear'
                           }}
                           className="absolute -inset-4 rounded-2xl opacity-70"
@@ -480,19 +479,18 @@ export function NewYearWish() {
                           animate={{
                             boxShadow: [
                               '0 0 40px rgba(255, 204, 51, 0.6)',
-                              '0 0 60px rgba(255, 51, 153, 0.8)',
-                              '0 0 40px rgba(255, 204, 51, 0.6)',
+                              '0 0 60px rgba(255, 51, 153, 0.8)'
                             ]
                           }}
                           transition={{
                             duration: 3,
-                            repeat: Infinity,
+                            repeat: 2,
                             delay: 3,
                           }}
                           className="relative overflow-hidden rounded-2xl"
                         >
                           <img
-                            src="https://images.unsplash.com/photo-1753267116436-a3918573b532?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBoYXBweSUyMG1vbWVudHN8ZW58MXx8fHwxNzY3MTUyMzIzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                            src="/img4.jpg"
                             alt="Happy moment 4"
                             className="w-full h-64 object-cover border-4 border-yellow-200/50 rounded-2xl"
                           />
@@ -515,8 +513,8 @@ export function NewYearWish() {
                         y: [-10, 10, -10]
                       }}
                       transition={{ 
-                        duration: 3, 
-                        repeat: Infinity,
+                        duration: 9, 
+                        repeat: 2,
                       }}
                       className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
                     >
@@ -606,8 +604,8 @@ export function NewYearWish() {
               scale: [0.8, 1.2, 0.8],
             }}
             transition={{
-              duration: 4 + Math.random() * 3,
-              repeat: Infinity,
+              duration: 8,
+              repeat: 2,
               delay: Math.random() * 3,
             }}
           />
