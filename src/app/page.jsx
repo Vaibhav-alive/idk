@@ -6,7 +6,7 @@ import Welcome from "@/components/screens/IntroScreen";
 import Compliment from "@/components/screens/ComplimentsScreen";
 import Message from "@/components/screens/MessageScreen";
 import Final from "@/components/screens/FinalScreen";
-
+import { NewYearWish } from "@/components/screens/NewYear";
 export default function Home() {
   const [currentScreen, setCurrentScreen] = useState("welcome");
 
@@ -14,6 +14,8 @@ export default function Home() {
     if (currentScreen === "welcome") setCurrentScreen("compliment");
     else if (currentScreen === "compliment") setCurrentScreen("message");
     else if (currentScreen === "message") setCurrentScreen("final");
+    else if (currentScreen === "final") setCurrentScreen("newyear");
+
   };
 
   const bgMap = {
@@ -27,7 +29,9 @@ export default function Home() {
     welcome: <Welcome onNext={handleNext} />,
     compliment: <Compliment onNext={handleNext} />,
     message: <Message onNext={handleNext} />,
-    final: <Final />,
+    final: <Final onNext={handleNext}/>,
+    newyear: <NewYearWish />,
+
   };
 
   const ScreenWrapper = ({ children, keyName }) => (
