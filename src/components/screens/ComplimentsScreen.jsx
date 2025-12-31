@@ -5,7 +5,7 @@ const compliments = [
   "You are imperfectly perfect",
   "Your clinginess is addictive",
   "You are my sweetest dream",
-  "With you, I fell loved",
+  "With you, I feel loved",
   "Titiksha, you inspire me",
 ]
 
