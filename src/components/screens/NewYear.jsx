@@ -294,7 +294,7 @@ export function NewYearWish() {
                     />
                     
                     {/* Grid layout for 4 images */}
-                    <div className="relative grid grid-cols-2 gap-6 p-4">
+                    <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6 p-4">
                       {/* Image 1 - Top Left */}
                       <motion.div
                         initial={{ x: -100, opacity: 0 }}
@@ -334,7 +334,7 @@ export function NewYearWish() {
                           <img
                             src="/img1.jpg"
                             alt="Happy moment 1"
-                            className="w-full h-64 object-cover border-4 border-yellow-200/50 rounded-2xl"
+                            className="w-full h-48 sm:h-58 md:h-64 object-cover border-4 border-yellow-200/50 rounded-2xl"
                             loading="lazy"
                           />
                         </motion.div>
@@ -465,7 +465,7 @@ export function NewYearWish() {
                           //   scale: [1, 1.05, 1]
                           // }}
                           transition={{ 
-                            duration: 3, 
+                            duration: 2, 
                             repeat: 1,
                             ease: 'linear'
                           }}
@@ -604,8 +604,8 @@ export function NewYearWish() {
               scale: [0.8, 1.2, 0.8],
             }}
             transition={{
-              duration: 8,
-              repeat: 2,
+              duration: 3,
+              repeat: 1,
               delay: Math.random() * 3,
             }}
           />
