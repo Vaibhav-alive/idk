@@ -323,7 +323,9 @@ export function NewYearWish() {
                             boxShadow: [
                               '0 0 40px rgba(255, 204, 51, 0.6)',
                               '0 0 60px rgba(255, 51, 153, 0.8)'
-                            ]
+                            ],
+                            rotate: [0, 10, -10, 0],
+
                           }}
                           transition={{
                             duration: 3,
@@ -334,7 +336,7 @@ export function NewYearWish() {
                           <img
                             src="/img1.jpg"
                             alt="Happy moment 1"
-                            className="w-full h-48 sm:h-58 md:h-64 object-cover border-4 border-yellow-200/50 rounded-2xl"
+                            className="w-full aspect-[5/4] sm:h-58 md:h-64 object-cover border-4 border-yellow-200/50 rounded-2xl"
                             loading="lazy"
                           />
                         </motion.div>
@@ -375,7 +377,9 @@ export function NewYearWish() {
                             boxShadow: [
                               '0 0 40px rgba(255, 51, 153, 0.6)',
                               '0 0 60px rgba(138, 43, 226, 0.8)'
-                            ]
+                            ],
+                            rotate: [0, 10, -10, 0],
+
                           }}
                           transition={{
                             duration: 2,
@@ -387,7 +391,7 @@ export function NewYearWish() {
                           <img
                             src="/img2.jpg"
                             alt="Happy moment 2"
-                            className="w-full h-64 object-cover border-4 border-pink-200/50 rounded-2xl"
+                            className="w-full aspect-[4/5] object-cover border-4 border-pink-200/50 rounded-2xl"
                             loading="lazy"
                           />
                         </motion.div>
@@ -428,10 +432,13 @@ export function NewYearWish() {
                             boxShadow: [
                               '0 0 40px rgba(138, 43, 226, 0.6)',
                               '0 0 60px rgba(255, 204, 51, 0.8)'
-                            ]
+                            ],
+                            rotate: [0, 10, -10, 0],
+
                           }}
                           transition={{
-                            duration: 3,
+                            
+                            duration: 2,
                             repeat: 1,
                             delay: 2,
                           }}
@@ -440,7 +447,7 @@ export function NewYearWish() {
                           <img
                             src="/img3.jpg"
                             alt="Happy moment 3"
-                            className="w-full h-64 object-cover border-4 border-purple-200/50 rounded-2xl"
+                            className="w-full aspect-[5/4] object-cover border-4 border-purple-200/50 rounded-2xl"
                           />
                         </motion.div>
                         <motion.div
@@ -480,19 +487,21 @@ export function NewYearWish() {
                             boxShadow: [
                               '0 0 40px rgba(255, 204, 51, 0.6)',
                               '0 0 60px rgba(255, 51, 153, 0.8)'
-                            ]
+                            ],
+                            rotate: [0, 10, -10, 0],
+
                           }}
                           transition={{
                             duration: 3,
                             repeat: 2,
-                            delay: 3,
+                            delay: 1,
                           }}
                           className="relative overflow-hidden rounded-2xl"
                         >
                           <img
                             src="/img4.jpg"
                             alt="Happy moment 4"
-                            className="w-full h-64 object-cover border-4 border-yellow-200/50 rounded-2xl"
+                            className="w-full aspect-[5/4] object-cover border-4 border-yellow-200/50 rounded-2xl"
                           />
                         </motion.div>
                         <motion.div
