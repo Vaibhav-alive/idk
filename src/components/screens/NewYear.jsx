@@ -226,7 +226,7 @@ export function NewYearWish() {
                 </motion.div>
                 
                 <h1 className="mb-6 text-white bg-gradient-to-r from-pink-200 via-rose-200 to-red-200 bg-clip-text text-transparent">
-                  Happy New Year 2025!
+                  Happy New Year 2026!
                 </h1>
                 
                 <p className="mb-8 text-pink-100">
@@ -545,7 +545,7 @@ export function NewYearWish() {
                   </div>
                   
                   <p className="text-pink-50 italic leading-relaxed">
-                    "As we step into 2025, I want you to know that you are my greatest blessing. 
+                    "As we step into 2026, I want you to know that you are my greatest blessing. 
                     May this year fill our hearts with deeper love, our days with endless laughter, 
                     and our nights with sweet dreams of forever together."
                   </p>
